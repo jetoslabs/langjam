@@ -8,7 +8,7 @@ from src.langjam.openai.openai_function.openai_function_model import FunctionSch
 
 class OpenaiFunction:
     """
-    OpenaiFunction class contains method to create function definition. Function definition
+    OpenaiFunction class contains method to create function definition for Openai
     """
 
     @staticmethod

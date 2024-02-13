@@ -6,7 +6,7 @@ import pytest
 from pydantic import BaseModel, Field
 
 from src.langjam.openai.openai_function.openai_function import OpenaiFunction
-from tests.expected import get_current_weather_expected
+from tests.openai.openai_function.expected import get_current_weather_expected
 
 
 class Unit(str, Enum):
