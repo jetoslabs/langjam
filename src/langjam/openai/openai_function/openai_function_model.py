@@ -25,5 +25,5 @@ class FunctionSchema(BaseModel):
     type: str = "function"
     function: FunctionObj
 
-    class Config:
+    class ConfigDict:
         exclude_none = True
