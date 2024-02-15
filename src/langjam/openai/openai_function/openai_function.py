@@ -2,9 +2,6 @@ from typing import Dict, Any, List
 
 from pydantic import BaseModel
 
-from src.langjam.openai.openai_function.openai_function_model import FunctionSchema, FunctionObj, ParametersObj, \
-    PropertyObj
-
 
 class OpenaiFunction:
     """
