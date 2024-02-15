@@ -36,6 +36,8 @@ class OpenaiFunction:
         params: List[str] = []
         annotations: Dict[str, Any] = func.__annotations__
         for key in annotations.keys():
+            if key is "return":
+                continue
             params.append(key)
         return params
 
