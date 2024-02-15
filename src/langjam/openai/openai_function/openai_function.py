@@ -68,11 +68,19 @@ class OpenaiFunction:
                     if "type" in option_dict:
                         option_dict["type"] = "null"
                     else:
-                        expanded_property = option_dict;
+                        expanded_property = option_dict
+                        break
+            if "allOf" in expanded_property:
+                option_list = expanded_property["allOf"]
+                for option_dict in option_list:
+                    if "type" in option_dict:
+                        option_dict["type"] = "null"
+                    else:
+                        expanded_property = option_dict
                         break
             if "$ref" not in expanded_property:
-                property_obj = PropertyObj(**expanded_property)
-                return property_obj
+                # property_obj = PropertyObj(**expanded_property)
+                return expanded_property
             elif "$ref" in expanded_property:
                 ref_value = expanded_property["$ref"].split("/")[-1]
                 expanded_property = references[ref_value]
