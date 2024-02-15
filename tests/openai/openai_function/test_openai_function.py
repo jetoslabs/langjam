@@ -22,7 +22,7 @@ class GetCurrentWeatherParams(BaseModel):
 
 
 async def get_current_weather(get_current_weather_params: GetCurrentWeatherParams):
-    return "ok"
+    return "30"
 
 
 @pytest.mark.asyncio
@@ -32,6 +32,6 @@ async def test_get_definition_happy_path_1():
         func, "Get the current weather in a given location"
     )
     assert (
-            resp.model_dump_json(exclude_none=True).replace(" ", "") ==
+            json.dumps(resp).replace(" ", "") ==
             json.dumps(get_current_weather_expected).replace(" ", "")
     )
