@@ -56,7 +56,7 @@ class OpenaiFunction:
 
     @staticmethod
     async def _get_de_referenced_property(references: Dict[str, Any], property_value: Dict[str, Any],
-                                          property_name: str) -> PropertyObj:
+                                          property_name: str) -> Dict[str, object]:
         is_done = False
         expanded_property = property_value
         while True:
